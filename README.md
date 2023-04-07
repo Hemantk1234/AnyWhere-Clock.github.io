@@ -57,7 +57,7 @@ I hope you like it!
 
 ## 🔗 Links
 
-> ##💁‍♂️ Checkout the Website [AnyWhere-Clock Web Application](https://hemantk1234.github.io/Simple_Music_App.github.io/)
+> ##💁‍♂️ Checkout the Website [AnyWhere-Clock Web Application](https://hemantk1234.github.io/AnyWhere-Clock.github.io/)
 >
 
 <br/>
