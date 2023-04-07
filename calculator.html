@@ -1,0 +1,750 @@
+<!-- Created by ★ Hemant ★ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="templates/style.css" />
+    <link rel="stylesheet" href="index.html" />
+    <link rel="stylesheet" href="calender.html" />
+    <link rel="stylesheet" href="calculator.html" />
+    <!-- Bootstrap icon link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <!-- Bootstrap Css link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!-- font awesome cdn link  -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+  />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Monserrat+Alternates:wght@300&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #2e2d2d;
+        color: #3c3836;
+        font-family: "Montserrat Alternates", sans-serif;
+      }
+
+      /* Menu styles*/
+      .menu {
+        width: 30px;
+        text-align: center;
+        z-index: 500;
+        margin-top: 10px;
+        margin-left: 2px;
+      }
+      .menu:hover,
+      .menu:focus {
+        cursor: pointer;
+        background-color: #3f0066;
+      }
+      .bar1,
+      .bar2,
+      .bar3 {
+        width: 29px;
+        height: 5px;
+        background-color: #fffbfb;
+        margin: 4px 0;
+      }
+      #up {
+        display: none;
+      }
+      #container {
+        background-color: #f0eeff;
+        width: 200px;
+        height: 300px;
+        display: block;
+        position: absolute;
+        margin: 8px;
+        border: 1px solid;
+        border-bottom: none;
+        z-index: 1;
+      }
+      a {
+        margin: 0px;
+        padding: 0px;
+        border-bottom: 1px solid;
+        width: 161px;
+        height: 75px;
+        display: flex;
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+      }
+      a:hover,
+      a:focus {
+        opacity: 0.2;
+        background-color: transparent;
+        color: black;
+      }
+
+      /*Calculator Section*/
+      #calculator {
+      }
+      .title {
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        display: none;
+      }
+
+      .start {
+        width: 400px;
+        height: 600px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: #5c5859;
+        padding: 0;
+        box-shadow: 0 5px 50px 0 rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0 -5px 10px 5px rgb(0 0 0 / 50%);
+        transform: translate(-50%, -50%) scale(1);
+      }
+      #clear {
+        background: #ff1900;
+        color: #171717;
+        box-shadow: inset 0 5px 10px 0 #ff1900, inset 0 -5px 10px 3px #2d1f1fba,
+          0 5px 10px 0px #1e211e;
+      }
+      #img {
+        width: 50%;
+        height: 50%;
+        transform: scale(0.9);
+      }
+      .display {
+        width: 90%;
+        height: 90px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: 24px auto 15px auto;
+        font-size: 50px;
+        text-align: right;
+        font-family: "Montserrat Alternates", sans-serif;
+        background: #ebebeb;
+        color: #2d1f1f;
+        border: none;
+        padding: 0 5px 0 0;
+        border-radius: 5px;
+      }
+      table {
+        position: absolute;
+        margin: 0 5px 23px 23px;
+        bottom: 0;
+        z-index: 0;
+      }
+
+      .btn {
+        width: 76px;
+        height: 76px;
+        font-size: 40px;
+        font-weight: bold;
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: 4px;
+        border: none;
+        border-radius: 1px;
+        font-family: "Montserrat Alternates", sans-serif;
+        background: #f0eeef;
+        color: #2d1f1f;
+        box-shadow: inset 0 5px 10px 0 #fff, inset 0 -5px 10px 3px #847a7aba,
+          0 5px 10px 0px #1e211e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .equal,
+      #equal {
+        height: 164px;
+      }
+      #equal {
+        background: #31e008;
+        color: #4f4f4f;
+        box-shadow: inset 0 5px 10px 0 #31e008, inset 0 -5px 10px 3px #2d1f1fa8,
+          0 5px 10px 0px #1e211e;
+      }
+
+      /* General CSS */
+
+      #seconds {
+        border: 3px solid #00ff70;
+        padding: 8px;
+        margin-left: 50px;
+        width: 360px;
+      }
+      #minutes {
+        border: 3px solid #ffe516;
+        padding: 8px;
+        margin-left: 42px;
+        margin-top: 8px;
+        width: 360px;
+      }
+      #hours {
+        border: 3px solid #ff264e;
+        padding: 9px;
+        margin-left: 27px;
+        margin-top: 8px;
+        width: 360px;
+      }
+      #days {
+        border: 3px solid #ce4806;
+        padding: 9px;
+        margin-left: 21px;
+        margin-top: 8px;
+        width: 360px;
+      }
+      #weeks {
+        border: 3px solid #ab00f9;
+        padding: 9px;
+        margin-left: 31px;
+        margin-top: 8px;
+        width: 360px;
+      }
+      #years {
+        border: 3px solid #9b6602;
+        padding: 9px;
+        margin-left: 24px;
+        margin-top: 10px;
+        width: 360px;
+      }
+      #celsius {
+        border: 3px solid blue;
+        padding: 9px;
+        margin-left: 24px;
+        margin-top: 10px;
+        width: 360px;
+      }
+      #fahrenhait {
+        border: 3px solid rgb(217, 4, 255);
+        padding: 9px;
+        margin-left: 45px;
+        margin-top: 10px;
+        width: 360px;
+      }
+      #kelvin {
+        border: 3px solid rgb(0, 255, 4);
+        padding: 9px;
+        margin-left: 14px;
+        margin-top: 10px;
+        width: 360px;
+      }
+
+      /*Time Section*/
+      .time {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      @media screen and (max-width: 450px) {
+        .label{
+        position: relative;
+        left: 50%;
+      }
+      input{
+        width: 50%;
+      }
+      }
+
+      /*Temperature Section*/
+      .temp {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .label{
+        color: #fff;
+      }
+
+      @media screen and (max-width: 400px) {
+        .start {
+          width: 370px;
+          height: 600px;
+          top: 350px;
+        }
+
+        .one {
+          width: 370px;
+          height: 600px;
+          position: absolute;
+        }
+
+        table {
+          position: absolute;
+          margin: 0 5px 10px 10px;
+          top: 25%;
+        }
+        #container {
+          height: 250px;
+          width: 150px;
+        }
+        a {
+          width: 150px;
+          height: 61px;
+        }
+        a:hover,
+        a:focus {
+          opacity: 0.2;
+          background-color: #ffffdd;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Menu Section-->
+    <div class="menu" onclick="menu()">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <div id="up">
+      <div class="container" id="container">
+        <span
+          style="
+            position: absolute;
+            top: -4px;
+            right: 4px;
+            font-size: 27px;
+            cursor: pointer;
+          "
+          onclick="sx()"
+          >X</span
+        >
+        <a onclick="calcu()">Calculator</a>
+        <a onclick="time()">Time</a>
+        <a onclick="temp()">Temperature</a>
+        <a href="https://github.com/Hemantk1234" target="_blank">Github</a>
+      </div>
+    </div>
+
+    <!-- The Calculator section-->
+    <article id="calculator">
+      <header>
+        <h1 class="title">Calculator</h1>
+      </header>
+      <div class="start">
+        <form name="calc">
+          <input
+            class="display"
+            name="display"
+            placeholder="0"
+            style="overflow: scroll"
+            disabled
+          />
+        </form>
+        <table>
+          <tr>
+            <td>
+              <div class="btn" id="clear" onclick="clr()">C</div>
+            </td>
+            <td>
+              <div class="btn" onclick="opr('/')">÷</div>
+            </td>
+            <td>
+              <div class="btn" onclick="opr('*')">x</div>
+            </td>
+            <td>
+              <div class="btn" onclick="back()">
+                <img
+                  id="img"
+                  alt="‹"
+                  src="https://www.dropbox.com/s/2jmv326a6rdvijq/Clear.png?raw=1"
+                />
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="btn" onclick="ins('7')">7</div>
+            </td>
+            <td>
+              <div class="btn" onclick="ins('8')">8</div>
+            </td>
+            <td>
+              <div class="btn" onclick="ins('9')">9</div>
+            </td>
+            <td>
+              <div class="btn" onclick="ins('-')">-</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="btn" onclick="ins('4')">4</div>
+            </td>
+            <td>
+              <div class="btn" onclick="ins('5')">5</div>
+            </td>
+            <td>
+              <div class="btn" onclick="ins('6')">6</div>
+            </td>
+            <td>
+              <div class="btn" onclick="opr('+')">+</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="btn" onclick="ins('1')">1</div>
+            </td>
+            <td>
+              <div class="btn" onclick="ins('2')">2</div>
+            </td>
+            <td>
+              <div class="btn" onclick="ins('3')">3</div>
+            </td>
+            <td rowspan="2" class="equal">
+              <div id="equal" class="btn" onclick="equal()">=</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="btn" onclick="percent()">%</div>
+            </td>
+            <td>
+              <div class="btn" onclick="zero('0')">0</div>
+            </td>
+            <td>
+              <div class="btn" onclick="ins('.')">.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </article>
+
+    <!-- Time Section -->
+    <article id="time" style="display: none">
+      <div class="time">
+        <header>
+          <h1 class="title" style="display: flex; color: #fff; justify-content:space-around; text-align: center;">Time</h1>
+        </header>
+        <br />
+        <div>
+          <input
+            type="number"
+            min="0"
+            value="0"
+            id="seconds"
+            onchange="second(this.value)"
+            oninput="second(this.value)"
+          />
+          <span class="label" style="color: #fff">Seconds</span>
+        </div>
+        <br />
+        <div>
+          <input
+            type="number"
+            min="0"
+            value="0"
+            id="minutes"
+            onchange="minute(this.value)"
+            oninput="minute(this.value)"
+          />
+          <span class="label" style="color: #fff">Minutes</span>
+        </div>
+        <br />
+        <div>
+          <input
+            type="number"
+            min="0"
+            value="0"
+            id="hours"
+            onchange="hour(this.value)"
+            oninput="hour(this.value)"
+          />
+          <span class="label" style="color: #fff">Hours</span>
+        </div>
+        <br />
+        <div>
+          <input
+            type="number"
+            min="0"
+            value="0"
+            id="days"
+            onchange="day(this.value)"
+            oninput="day(this.value)"
+          />
+          <span class="label" style="color: #fff">Days</span>
+        </div>
+        <br />
+        <div>
+          <input
+            type="number"
+            min="0"
+            value="0"
+            id="weeks"
+            onchange="week(this.value)"
+            oninput="week(this.value)"
+          />
+          <span class="label" style="color: #fff">Weeks</span>
+        </div>
+        <br />
+        <div>
+          <input
+            type="number"
+            min="0"
+            value="0"
+            id="years"
+            onchange="year(this.value)"
+            oninput="year(this.value)"
+          />
+          <span class="label" style="color: #fff">Years</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Temperature Section -->
+    <article id="temperature" style="display: none">
+      <div class="temp">
+        <header>
+          <h1 class="title" style="display: flex; color: #fff; justify-content:space-around; text-align: center;">Temperature</h1>
+        </header>
+        <br />
+        <div class="main">
+          <input
+            type="number"
+            value="0"
+            id="celsius"
+            onchange="celsius(this.value)"
+            oninput="celsius(this.value)"
+          />
+          <span class="label">Celsius</span>
+        </div>
+        <br />
+        <div>
+          <input
+            type="number"
+            value="32"
+            id="fahrenhait"
+            onchange="fahrenhait(this.value)"
+            oninput="fahrenhait(this.value)"
+          />
+          <span class="label">Fahrenhait</span>
+        </div>
+        <br />
+        <div>
+          <input
+            type="number"
+            value="273.15"
+            id="kelvin"
+            onchange="kelvin(this.value)"
+            oninput="kelvin(this.value)"
+          />
+          <span class="label">Kelvin</span>
+        </div>
+      </div>
+    </article>
+
+    <!--Feedback-->
+    <div class="d-flex" style="position: relative; top: 40rem; opacity: 1; background-color:rgb(94, 94, 95) !important;">
+      <div class="p-2 text-white">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; How was your experience? &nbsp; <i class="bi bi-hand-thumbs-up-fill" id="Pointer"></i> &nbsp; <i class="bi bi-hand-thumbs-down-fill" id="Pointer"></i></div>
+      <div class="ms-auto p-2 text-white" id="Pointer">Contact Us &nbsp; <i class="bi bi-envelope-fill"></i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5" style="top: 39rem; position: relative;color: white;">
+
+      
+
+      <div class="container">
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>Made with ❤ by HK</p>
+          <p>© 2023 Calculator, Inc. All Rights Reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-dark fab fa-twitter" target="_blank" href="https://twitter.com/HemantkEtc116" style="text-decoration: none; width: auto; font-size:27px; background-color: white;border-radius: 3px;height: auto;"></a></li>
+            <li class="ms-3"><a class="link-dark fab fa-facebook-f" target="_blank" href="https://www.facebook.com/hemant.kumbhalkar.581" style="text-decoration: none; width: auto; font-size:27px; background-color: white;border-radius: 3px;height: auto;"></a></li>
+            <li class="ms-3"><a class="link-dark fab fa-linkedin" target="_blank" href="https://www.linkedin.com/in/hemant-kumbhalkar-87393b235/" style="text-decoration: none; width: auto; font-size:27px; background-color: white;border-radius: 3px;height: auto;"></a></li>
+        </ul>
+      </div>
+      </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script type="text/javascript">
+      /*Calculator*/
+      function opr(o) {
+        var view = document.calc.display;
+        if (view.value != "") {
+          view.value += o;
+        }
+      }
+
+      function back() {
+        var exp = document.calc.display.value;
+        document.calc.display.value = exp.substring(0, exp.length - 1);
+      }
+
+      function ins(num) {
+        var a = document.calc.display;
+
+        a.value += num;
+      }
+
+      function clr() {
+        document.calc.display.value = "";
+      }
+
+      function zero() {
+        var view = document.calc.display;
+        if (view.value != "") {
+          view.value += "0";
+        }
+      }
+
+      function equal() {
+        var a = document.calc.display;
+        var exp = a.value;
+
+        if (exp) {
+          try {
+            a.value = eval(exp);
+          } catch (e) {
+            document.calc.display.value = "Syntax Error!";
+          }
+        }
+        if (a.value == 0) {
+          a.value = "";
+        }
+        if (a.value == "Infinity") {
+          document.calc.display.value = "Can't divide by Zero!";
+        }
+      }
+
+      function percent() {
+        var b = eval(document.calc.display.value);
+        document.calc.display.value = b / 100;
+      }
+
+      /*Menu*/
+      function menu() {
+        document.getElementById("up").style.display = "block";
+      }
+      function sx() {
+        document.getElementById("up").style.display = "none";
+      }
+      function calcu() {
+        document.getElementById("calculator").style.display = "block";
+        document.getElementById("up").style.display = "none";
+        document.getElementById("temperature").style.display = "none";
+        document.getElementById("time").style.display = "none";
+      }
+      function time() {
+        document.getElementById("time").style.display = "block";
+        document.getElementById("calculator").style.display = "none";
+        document.getElementById("up").style.display = "none";
+        document.getElementById("temperature").style.display = "none";
+      }
+      function temp() {
+        document.getElementById("temperature").style.display = "block";
+        document.getElementById("up").style.display = "none";
+        document.getElementById("calculator").style.display = "none";
+        document.getElementById("time").style.display = "none";
+      }
+
+      /*Time*/
+      var s = document.getElementById("seconds");
+      var m = document.getElementById("minutes");
+      var h = document.getElementById("hours");
+      var d = document.getElementById("days");
+      var w = document.getElementById("weeks");
+      var y = document.getElementById("years");
+
+      function second(i) {
+        i = parseFloat(i);
+        m.value = i / 60;
+        h.value = i / 3600;
+        d.value = i / 86400;
+        w.value = i / 604800;
+        y.value = i / 31557600;
+      }
+
+      function minute(i) {
+        i = parseFloat(i);
+        s.value = i * 60;
+        h.value = i / 60;
+        d.value = i / 1440;
+        w.value = i / 10080;
+        y.value = i / 525960;
+      }
+
+      function hour(i) {
+        i = parseFloat(i);
+        s.value = i * 3600;
+        m.value = i * 60;
+        d.value = i / 24;
+        w.value = i / 168;
+        y.value = i / 8766;
+      }
+
+      function day(i) {
+        i = parseFloat(i);
+        s.value = i * 86400;
+        m.value = i * 1440;
+        h.value = i * 24;
+        w.value = i / 7;
+        y.value = i / 365.25;
+      }
+
+      function week(i) {
+        i = parseFloat(i);
+        s.value = i * 604800;
+        m.value = i * 10080;
+        h.value = i * 168;
+        d.value = i * 7;
+        y.value = i / 52.179;
+      }
+
+      function year(i) {
+        i = parseFloat(i);
+        s.value = i * 31557600;
+        m.value = i * 525960;
+        h.value = i * 8766;
+        d.value = i * 365.25;
+        w.value = i * 52.179;
+      }
+
+      /*Temperature*/
+      var c = document.getElementById("celsius");
+      var f = document.getElementById("fahrenhait");
+      var k = document.getElementById("kelvin");
+
+      function celsius(a) {
+        a = parseFloat(a);
+        f.value = (a * 9) / 5 + 32;
+        k.value = a + 273.15;
+      }
+      function fahrenhait(a) {
+        a = parseFloat(a);
+        c.value = ((a - 32) * 5) / 9;
+        k.value = ((a - 32) * 5) / 9 + 273.15;
+      }
+
+      function kelvin(a) {
+        a = parseFloat(a);
+        f.value = ((a - 273.15) * 9) / 5 + 32;
+        c.value = a - 273.15;
+      }
+    </script>
+  </body>
+</html>

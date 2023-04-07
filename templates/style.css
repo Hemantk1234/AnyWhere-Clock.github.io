@@ -1,0 +1,59 @@
+/* Created by ★ Hemant ★ */
+/* General Css */
+body{
+    background-color: #f7f3ea;
+}
+
+/* Navbar Css */
+.myaccount{
+    margin-left: 50px;
+}
+.account-dropdown{
+    margin-left: 10px;
+}
+
+/* Analog Clock Css */
+#clockContainer{
+    position: relative;
+    margin: auto;
+    height: 30vw;
+    width: 30vw;
+    background: url(img/clock.png) no-repeat;
+    background-size: 100%;
+}
+#hour, #minute, #second{
+    position: absolute;
+    background: black;
+    border-radius: 10px;
+    transform-origin: bottom;
+}
+#hour{
+    width: 1.4%;
+    height: 25%;
+    top: 25%;
+    left: 49.7%;
+}
+#minute{
+    width: 0.8%;
+    height: 30%;
+    top: 19%;
+    left: 49.7%;
+}
+#second{
+    width: 0.6%;
+    height: 40%;
+    top: 9%;
+    left: 49.7%;
+    background-color: red;
+}
+
+/* Footer Css */
+#underline:hover{
+    text-decoration: underline;
+    filter: drop-shadow(.125rem .125rem .1875rem rgba(0,0,0,.5));
+}
+
+#Pointer:hover{
+    cursor: pointer;
+    filter: drop-shadow(.125rem .125rem .1875rem rgba(0,0,0,.5));
+}

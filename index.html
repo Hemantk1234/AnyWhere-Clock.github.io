@@ -1,0 +1,1490 @@
+<!-- Created by ★ Hemant ★ -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Any-Where Clock</title>
+    <link rel="stylesheet" href="templates/style.css">
+    <link rel="stylesheet" href="calculator.html">
+    <link rel="stylesheet" href="calender.html">
+    <link rel="stylesheet" href="weather.html">
+    <link rel="stylesheet" href="News.html">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <!-- font awesome cdn link  -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+  />
+</head>
+
+<body style="background-color: rgb(233, 228, 228);">
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg" style="background-color: #333333;">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="color: white;" href="index.html">Anywhere Clock</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" style="color: white;" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Analog Clock</a></li>
+                            <li><a class="dropdown-item" href="index.html">Universal Clock</a></li>
+                            <li><a class="dropdown-item" href="index.html">Alarm Clock</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="index.html">Account/Settings</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" style="color: white;" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="calculator.html" target="_blank">Calculator</a></li>
+                            <li><a class="dropdown-item" href="weather.html" target="_blank">Weather App</a></li>
+                            <li><a class="dropdown-item" href="calender.html" target="_blank">Calender</a></li>
+                            <li><a class="dropdown-item" href="News.html" target="_blank">News</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="index.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="index.html">Contact Us</a></li>
+                            <li><a class="dropdown-item" href="index.html">Terms & Conditions</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search...</button>
+                </form>
+                <div class="myaccount">
+                    <li class="nav-item dropdown" style="list-style: none;">
+                        <a href="#" style="color: white; font-size: 160%;" class="nav-link myaccount dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-circle"></i></a>
+                        <ul class="dropdown-menu account-dropdown" style="top: 150%; left: -70%;">
+                            <li><a class="dropdown-item" href="index.html">My Location</a></li>
+                            <li><a class="dropdown-item" href="index.html">My Units</a></li>
+                            <li><a class="dropdown-item" href="index.html">My Events</a></li>
+                            <li><a class="dropdown-item" href="index.html">My World Clock's</a></li>
+                            <li><a class="dropdown-item" href="index.html">My Privacy</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="index.html">Paid Services</a></li>
+                            <li><a class="dropdown-item" href="index.html">Sign In</a></li>
+                            <li><a class="dropdown-item" href="index.html">Register</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Analog Clock -->
+    <h1 class="display-4 fw-normal mb-4 text-center">Analog Clock</h1>
+    <div id="clockContainer">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+    </div>
+
+    <!--Main Clock container-->
+    <div class="container">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal mb-4">Universal Clock</h1>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in India <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="india"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> India</li>
+                                <li><b>Capital:</b> New Delhi</li>
+                                <li><b>Dial Code:</b> +91</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in United States <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="usa"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> United States</li>
+                                <li><b>Capital:</b> Washington, D.C.</li>
+                                <li><b>Dial Code:</b> +1</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in China <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="china"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> China</li>
+                                <li><b>Capital:</b> Beijing</li>
+                                <li><b>Dial Code:</b> +86</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in newyork <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="newyork"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> newyork</li>
+                                <li><b>Capital:</b> Albany</li>
+                                <li><b>Dial Code:</b> +212</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Russia <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="russia"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Russia</li>
+                                <li><b>Capital:</b> Moscow</li>
+                                <li><b>Dial Code:</b> +7</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Australia <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="australia"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Australia</li>
+                                <li><b>Capital:</b> Canberra</li>
+                                <li><b>Dial Code:</b> +61</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Brazil <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="brazil"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Brazil</li>
+                                <li><b>Capital:</b> Brasília</li>
+                                <li><b>Dial Code:</b> +55</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Spain <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="spain"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Spain</li>
+                                <li><b>Capital:</b> Madrid</li>
+                                <li><b>Dial Code:</b> +34</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Dubai <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="dubai"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Dubai</li>
+                                <li><b>Capital:</b> Dubai Emirate</li>
+                                <li><b>Dial Code:</b> +971</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Paris <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="paris"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Paris</li>
+                                <li><b>Capital:</b> France</li>
+                                <li><b>Dial Code:</b> +33</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Afghanistan <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="afghanistan"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Afghanistan</li>
+                                <li><b>Capital:</b> Kabul</li>
+                                <li><b>Dial Code:</b> +93</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Maldives <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="maldives"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Maldives</li>
+                                <li><b>Capital:</b> Malé</li>
+                                <li><b>Dial Code:</b> +960</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Qatar <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="qatar"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Qatar</li>
+                                <li><b>Capital:</b> Doha</li>
+                                <li><b>Dial Code:</b> +974</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Peru <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="peru"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Peru</li>
+                                <li><b>Capital:</b> Lima</li>
+                                <li><b>Dial Code:</b> +51</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Egypt <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="egypt"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Egypt</li>
+                                <li><b>Capital:</b> Cairo</li>
+                                <li><b>Dial Code:</b> +20</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in France <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="france"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> France</li>
+                                <li><b>Capital:</b> Paris</li>
+                                <li><b>Dial Code:</b> +33</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Indonesia <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="indonesia"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Indonesia</li>
+                                <li><b>Capital:</b> Jakarta</li>
+                                <li><b>Dial Code:</b> +62</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Japan <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="japan"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Japan</li>
+                                <li><b>Capital:</b> Tokyo</li>
+                                <li><b>Dial Code:</b> +81</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Ireland <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="ireland"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Ireland</li>
+                                <li><b>Capital:</b> Dublin</li>
+                                <li><b>Dial Code:</b> +353</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Italy <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="italy"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Italy</li>
+                                <li><b>Capital:</b> Rome</li>
+                                <li><b>Dial Code:</b> +39</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Iraq <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="iraq"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Iraq</li>
+                                <li><b>Capital:</b> Baghdad</li>
+                                <li><b>Dial Code:</b> +964</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Kenya <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="kenya"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Kenya</li>
+                                <li><b>Capital:</b> Nairobi</li>
+                                <li><b>Dial Code:</b> +254</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Turkey <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="turkey"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Turkey</li>
+                                <li><b>Capital:</b> Ankara</li>
+                                <li><b>Dial Code:</b> +90</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Tajikistan <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="tajikistan"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Tajikistan</li>
+                                <li><b>Capital:</b> Dushanbe</li>
+                                <li><b>Dial Code:</b> +992</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Germany <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="germany"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Germany</li>
+                                <li><b>Capital:</b> Berlin</li>
+                                <li><b>Dial Code:</b> +49</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Greece <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="greece"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Greece</li>
+                                <li><b>Capital:</b> Athens</li>
+                                <li><b>Dial Code:</b> +30</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Sweden <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="sweden"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Sweden</li>
+                                <li><b>Capital:</b> Stockholm</li>
+                                <li><b>Dial Code:</b> +46</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Southafrica <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="southafrica"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Southafrica</li>
+                                <li><b>Capital:</b> Pretoria</li>
+                                <li><b>Dial Code:</b> +27</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Sudan <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="sudan"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Sudan</li>
+                                <li><b>Capital:</b> Khartoum</li>
+                                <li><b>Dial Code:</b> +249</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Switzerland <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="switzerland"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Switzerland</li>
+                                <li><b>Capital:</b> Bern</li>
+                                <li><b>Dial Code:</b> +41</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Syria <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="syria"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Syria</li>
+                                <li><b>Capital:</b> Damascus</li>
+                                <li><b>Dial Code:</b> +963</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Romania <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="romania"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Romania</li>
+                                <li><b>Capital:</b> Bucharest</li>
+                                <li><b>Dial Code:</b> +40</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Cuba <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="cuba"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Cuba</li>
+                                <li><b>Capital:</b> Havana</li>
+                                <li><b>Dial Code:</b> +53</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Portugal <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="portugal"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Portugal</li>
+                                <li><b>Capital:</b> Lisbon</li>
+                                <li><b>Dial Code:</b> +351</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Oman <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="oman"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Oman</li>
+                                <li><b>Capital:</b> Muscat</li>
+                                <li><b>Dial Code:</b> +968</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Nigeria <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="nigeria"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Nigeria</li>
+                                <li><b>Capital:</b> Abuja</li>
+                                <li><b>Dial Code:</b> +234</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Norway <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="norway"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Norway</li>
+                                <li><b>Capital:</b> Oslo</li>
+                                <li><b>Dial Code:</b> +47</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Newzealand <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="newzealand"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Newzealand</li>
+                                <li><b>Capital:</b> Wellington</li>
+                                <li><b>Dial Code:</b> +64</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Nepal <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="nepal"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Nepal</li>
+                                <li><b>Capital:</b> Kathmandu</li>
+                                <li><b>Dial Code:</b> +977</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Belgium <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="belgium"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Belgium</li>
+                                <li><b>Capital:</b> Brussels</li>
+                                <li><b>Dial Code:</b> +32</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Bangladesh <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="bangladesh"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Bangladesh</li>
+                                <li><b>Capital:</b> Dhaka</li>
+                                <li><b>Dial Code:</b> +880</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Morocco <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="morocco"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Morocco</li>
+                                <li><b>Capital:</b> Rabat</li>
+                                <li><b>Dial Code:</b> +212</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Mexico <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="mexico"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Mexico</li>
+                                <li><b>Capital:</b> Mexico City</li>
+                                <li><b>Dial Code:</b> +52</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Mali <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="mali"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Mali</li>
+                                <li><b>Capital:</b> Bamako</li>
+                                <li><b>Dial Code:</b> +223</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Armenia <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="armenia"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Armenia</li>
+                                <li><b>Capital:</b> Yerevan</li>
+                                <li><b>Dial Code:</b> +374</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Malaysia <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="malaysia"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Malaysia</li>
+                                <li><b>Capital:</b> Kuala Lumpur</li>
+                                <li><b>Dial Code:</b> +60</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Canada <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="canada"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Canada</li>
+                                <li><b>Capital:</b> Ottawa</li>
+                                <li><b>Dial Code:</b> +1</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Chile <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="chile"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Chile</li>
+                                <li><b>Capital:</b> Santiago</li>
+                                <li><b>Dial Code:</b> +56</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Finland <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="finland"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Finland</li>
+                                <li><b>Capital:</b> Helsinki</li>
+                                <li><b>Dial Code:</b> +358</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Singapore <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="singapore"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Singapore</li>
+                                <li><b>Capital:</b> Republic of Singapore</li>
+                                <li><b>Dial Code:</b> +65</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Ukraine <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="ukraine"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Ukraine</li>
+                                <li><b>Capital:</b> Kyiv</li>
+                                <li><b>Dial Code:</b> +380</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Vietnam <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="vietnam"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Vietnam</li>
+                                <li><b>Capital:</b> Hanoi</li>
+                                <li><b>Dial Code:</b> +84</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Zimbabwe <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="zimbabwe"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Zimbabwe</li>
+                                <li><b>Capital:</b> Harare</li>
+                                <li><b>Dial Code:</b> +263</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Korea <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="korea"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Korea</li>
+                                <li><b>Capital:</b> Seoul</li>
+                                <li><b>Dial Code:</b> +82</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 border-primary">
+                            <h4 class="my-0 fw-normal">Time Zone in Jordan <i class="bi bi-clock"></i></h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" id="jordan"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><b>Country:</b> Jordan</li>
+                                <li><b>Capital:</b> Amman</li>
+                                <li><b>Dial Code:</b> +962</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-secondary">More About...</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Alarm container-->
+    <div class="container text-center border border-primary p-5 rounded-lg mb-4">
+        <h1 class="mt-0 mb-3">Alarm Clock</h1>
+        <h3 id="date"></h3>
+        <h3 id="time"></h3>
+
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <p>Set your alarm: </p>
+            </li>
+            <li class="list-inline-item">
+                <select id='alarm-hour' ></select>
+                <select id='alarm-minute' ></select>
+                <select id='alarm-second' ></select>
+            </li>
+        </ul>
+        <button id="start" type="button" class="btn btn-outline-primary">Start</button>
+        <button id="cancel" type="button" class="btn btn-outline-primary">Cancel</button>
+    </div>
+
+    <!--Feedback-->
+    <div class="d-flex mb-3 bg-primary ">
+        <div class="p-2 text-white">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; How was your experience? &nbsp; <i class="bi bi-hand-thumbs-up-fill" id="Pointer"></i> &nbsp; <i class="bi bi-hand-thumbs-down-fill" id="Pointer"></i></div>
+        <div class="ms-auto p-2 text-white" id="Pointer">Contact Us &nbsp; <i class="bi bi-envelope-fill"></i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+    </div>
+
+    <!--Footer-->
+    <div class="container">
+        <footer class="py-5">
+            <div class="row">
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Company</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2" id="underline"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                        <li class="nav-item mb-2" id="underline"><a href="#" class="nav-link p-0 text-muted">About Us</a></li>
+                        <li class="nav-item mb-2" id="underline"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                        <li class="nav-item mb-2" id="underline"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item mb-2" id="underline"><a href="#" class="nav-link p-0 text-muted">Contact Details</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Legal</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2 underline" id="underline"><a href="#" class="nav-link p-0 text-muted">Link policy</a></li>
+                        <li class="nav-item mb-2" id="underline"><a href="#" class="nav-link p-0 text-muted">Advertising</a></li>
+                        <li class="nav-item mb-2" id="underline"><a href="#" class="nav-link p-0 text-muted">Privacy policy</a></li>
+                        <li class="nav-item mb-2" id="underline"><a href="#" class="nav-link p-0 text-muted">My policy</a></li>
+                        <li class="nav-item mb-2" id="underline"><a href="#" class="nav-link p-0 text-muted">Disclaimer</a></li>
+                        <li class="nav-item mb-2" id="underline"><a href="#" class="nav-link p-0 text-muted">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Services</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2" id="underline"><a href="index.html" class="nav-link p-0 text-muted">Universal Clock</a></li>
+                        <li class="nav-item mb-2" id="underline"><a href="index.html" class="nav-link p-0 text-muted">Alarm Clock</a></li>
+                        <li class="nav-item mb-2" id="underline"><a href="index.html" class="nav-link p-0 text-muted">Time Zones</a></li>
+                        <li class="nav-item mb-2" id="underline"><a href="calender.html" target="_blank" class="nav-link p-0 text-muted">Calender</a></li>
+                        <li class="nav-item mb-2" id="underline"><a href="weather.html" target="_blank" class="nav-link p-0 text-muted">Weather</a></li>
+                        <li class="nav-item mb-2" id="underline"><a href="index.html" class="nav-link p-0 text-muted">Timer</a></li>
+                        <li class="nav-item mb-2" id="underline"><a href="calculator.html" target="_blank" class="nav-link p-0 text-muted">Calculator</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <form>
+                        <h5>Subscribe to our newsletter</h5>
+                        <p>For Monthly Updates of what's new and exciting from us.</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                            <label for="newsletter1" class="visually-hidden">Email address</label>
+                            <input id="newsletter1" type="email" class="form-control" placeholder="Email address">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                        <div class="mt-3 d-flex gap-2 w-100 flex-sm-row flex-column">
+                            <label for="newsletter1" class="visually-hidden">Message</label>
+                            <input id="newsletter1" type="text" class="form-control" placeholder="Send message..">
+                            <button class="btn btn-primary" type="button">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p>Made with ❤ by HK</p>
+				<p>© 2023 Universal clock, Inc. All Rights Reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-dark fab fa-twitter" target="_blank" href="https://twitter.com/HemantkEtc116" style="text-decoration: none; font-size: 25px;"></a></li>
+                    <li class="ms-3"><a class="link-dark fab fa-facebook-f" target="_blank" href="https://www.facebook.com/hemant.kumbhalkar.581" style="text-decoration: none; font-size: 25px;"></a></li>
+                    <li class="ms-3"><a class="link-dark fab fa-linkedin" target="_blank" href="https://www.linkedin.com/in/hemant-kumbhalkar-87393b235/" style="text-decoration: none; font-size: 25px;"></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+
+    <!-- Javascript for Analog Clock -->
+    <script>
+        setInterval(()=>{
+            d = new Date();
+            htime = d.getHours();
+            mtime = d.getMinutes();
+            stime = d.getSeconds();
+            hrotation = 30*htime + mtime/2;
+            mrotation = 6*mtime;
+            srotation = 6*stime;
+
+            hour.style.transform = `rotate(${hrotation}deg)`;
+            minute.style.transform = `rotate(${mrotation}deg)`;
+            second.style.transform = `rotate(${srotation}deg)`;
+        }, 1000);
+    </script>
+
+    <!--Javascript for universal clock-->
+    <script>
+        // 👉️ "1/15/2022, 11:54:44 PM"
+        const updateTime = ()=>{
+            let d = new Date()
+            india.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Kolkata',
+            }).split(",")[1]
+            usa.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'America/Los_Angeles',
+            }).split(", ")[1] 
+
+            china.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Shanghai',
+            }).split(",")[1];
+
+            newyork.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'America/New_York',
+            }).split(",")[1];
+
+            russia.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Moscow',
+            }).split(",")[1];
+
+            australia.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Australia/Sydney',
+            }).split(",")[1];
+
+            brazil.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'America/Sao_Paulo',
+            }).split(",")[1];
+
+            spain.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Madrid',
+            }).split(",")[1];
+
+            dubai.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Dubai',
+            }).split(",")[1];
+
+            paris.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Paris',
+            }).split(",")[1];
+
+            afghanistan.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Kabul',
+            }).split(",")[1];
+
+            maldives.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Indian/Maldives',
+            }).split(",")[1];
+
+            qatar.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Qatar',
+            }).split(",")[1];
+
+            peru.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'America/Lima',
+            }).split(",")[1];
+
+            egypt.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Africa/Cairo',
+            }).split(",")[1];
+
+            france.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Paris',
+            }).split(",")[1];
+
+            indonesia.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Jakarta',
+            }).split(",")[1];
+
+            japan.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Tokyo',
+            }).split(",")[1];
+
+            ireland.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Dublin',
+            }).split(",")[1];
+
+            italy.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Rome',
+            }).split(",")[1];
+
+            iraq.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Baghdad',
+            }).split(",")[1];
+
+            kenya.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Africa/Nairobi',
+            }).split(",")[1];
+
+            turkey.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Istanbul',
+            }).split(",")[1];
+
+            tajikistan.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Dushanbe',
+            }).split(",")[1];
+
+            germany.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Berlin',
+            }).split(",")[1];
+
+            greece.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Athens',
+            }).split(",")[1];
+
+            sweden.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Stockholm',
+            }).split(",")[1];
+
+            southafrica.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Africa/Johannesburg',
+            }).split(",")[1];
+
+            sudan.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Africa/Khartoum',
+            }).split(",")[1];
+
+            switzerland.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Zurich',
+            }).split(",")[1];
+
+            syria.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Damascus',
+            }).split(",")[1];
+
+            romania.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Bucharest',
+            }).split(",")[1];
+
+            cuba.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'America/Havana',
+            }).split(",")[1];
+
+            portugal.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Lisbon',
+            }).split(",")[1];
+
+            oman.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Muscat',
+            }).split(",")[1];
+
+            nigeria.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Africa/Lagos',
+            }).split(",")[1];
+
+            norway.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Oslo',
+            }).split(",")[1];
+
+            newzealand.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Pacific/Auckland',
+            }).split(",")[1];
+
+            nepal.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Kathmandu',
+            }).split(",")[1];
+
+            belgium.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Brussels',
+            }).split(",")[1];
+
+            bangladesh.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Dhaka',
+            }).split(",")[1];
+
+            morocco.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Africa/Casablanca',
+            }).split(",")[1];
+
+            mexico.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'America/Mexico_City',
+            }).split(",")[1];
+
+            mali.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Africa/Bamako',
+            }).split(",")[1];
+
+            armenia.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Yerevan',
+            }).split(",")[1];
+
+            malaysia.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Kuala_Lumpur',
+            }).split(",")[1];
+
+            canada.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'America/Toronto',
+            }).split(",")[1];
+
+            chile.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'America/Santiago',
+            }).split(",")[1];
+
+            finland.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Helsinki',
+            }).split(",")[1];
+
+            singapore.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Singapore',
+            }).split(",")[1];
+
+            turkey.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Istanbul',
+            }).split(",")[1];
+
+            ukraine.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Europe/Kiev',
+            }).split(",")[1];
+
+            vietnam.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Ho_Chi_Minh',
+            }).split(",")[1];
+
+            zimbabwe.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Africa/Harare',
+            }).split(",")[1];
+
+            korea.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Seoul',
+            }).split(",")[1];
+
+            jordan.innerHTML = d.toLocaleString('en-US', {
+                timeZone: 'Asia/Amman',
+            }).split(",")[1];
+        }
+        setInterval(updateTime, 1000);
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <!--Alarm JavaScript-->
+    <script>
+        let currentTime = '';
+const sound = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+sound.loop = true;
+
+const formatDay = (index) => {
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  return days[index];
+}
+
+const formatNumber = (number) => {
+  return number < 10 ? `0${number}` : number;
+};
+
+const displayDateTime = () => {
+  const current = new Date();
+  const day = formatDay(current.getDay());
+  const date = formatNumber(current.getDate());
+  const month = formatNumber(current.getMonth() + 1);
+  const year = current.getFullYear();
+  const displayedDate = document.getElementById("date");
+  displayedDate.innerText = `${day}, ${month}/${date}/${year}`;
+
+  const h = formatNumber(current.getHours());
+  const m = formatNumber(current.getMinutes());
+  const s = formatNumber(current.getSeconds());
+  const displayedTime = document.getElementById("time");
+  displayedTime.innerText = `${h}:${m}:${s}`;
+  currentTime = displayedTime.innerText;
+};
+
+const addOptions = (field, range) => {
+  const select = document.getElementById(`alarm-${field}`);
+  for (i = 0; i < range; i++) {
+    select.options[i] = new Option(formatNumber(i), i);
+  }
+}
+
+addOptions("hour", 24);
+addOptions("minute", 60);
+addOptions("second", 60);
+
+const getAlarmTime = () => {
+  const hour = document.getElementById('alarm-hour');
+  const minute = document.getElementById('alarm-minute');
+  const second = document.getElementById('alarm-second');
+  const h = formatNumber(hour.options[hour.selectedIndex].value);
+  const m = formatNumber(minute.options[minute.selectedIndex].value);
+  const s = formatNumber(second.options[second.selectedIndex].value);
+  return `${h}:${m}:${s}`;
+};
+
+const startAlarm = () => {
+  console.log(currentTime);
+  console.log(getAlarmTime());
+  document.getElementById('alarm-hour').disabled = true;
+  document.getElementById('alarm-minute').disabled = true;
+  document.getElementById('alarm-second').disabled = true;
+
+  setInterval(() => {
+    if (currentTime === getAlarmTime()) {
+      sound.play();
+      console.log("alarm time");
+    }
+  }, 1000);
+};
+
+const cancelAlarm = () => {
+  document.getElementById('alarm-hour').disabled = false;
+  document.getElementById('alarm-minute').disabled = false;
+  document.getElementById('alarm-second').disabled = false;
+  sound.pause();
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  setInterval(displayDateTime, 1000);
+});
+
+document.getElementById("start").addEventListener("click", startAlarm);
+
+document.getElementById("cancel").addEventListener("click", cancelAlarm);
+
+    </script>
+</body>
+
+</html>

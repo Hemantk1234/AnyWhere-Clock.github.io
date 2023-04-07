@@ -1,0 +1,155 @@
+<!-- Created by ★ Hemant ★ -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+
+    <!-- CSS -->
+    <style>
+        body {
+            background-color: #000;
+        }
+
+        h1{
+            color: #fff;
+            text-align: center;
+            text-decoration: underline;
+            margin-bottom: 2rem;
+            margin-top: 10rem;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: azure;
+        }
+
+        th {
+            text-align: center;
+            padding: 5px;
+            background-color: #ccc;
+        }
+
+        td {
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        td:hover {
+            background-color: #eee;
+        }
+
+        .today {
+            background-color: #eee;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Calender</h1>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="7">
+                    <button id="prev">&#8249;</button>
+                    <span id="month-year"></span>
+                    <button id="next">&#8250;</button>
+                </th>
+            </tr>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody id="calendar-body"></tbody>
+    </table>
+
+    <!-- JavaScript -->
+    <script>
+        const months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ];
+
+        let today = new Date();
+        let currentMonth = today.getMonth();
+        let currentYear = today.getFullYear();
+
+        const monthYear = document.getElementById("month-year");
+        const calendarBody = document.getElementById("calendar-body");
+
+        function updateCalendar() {
+            monthYear.innerHTML = months[currentMonth] + " " + currentYear;
+
+            let firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            let lastDate = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+            calendarBody.innerHTML = "";
+
+            let date = 1;
+            for (let i = 0; i < 6; i++) {
+                let row = document.createElement("tr");
+
+                for (let j = 0; j < 7; j++) {
+                    if (i === 0 && j < firstDay) {
+                        let cell = document.createElement("td");
+                        row.appendChild(cell);
+                    } else if (date > lastDate) {
+                        break;
+                    } else {
+                        let cell = document.createElement("td");
+                        cell.innerHTML = date;
+                        if (currentMonth === today.getMonth() && currentYear === today.getFullYear() && date === today.getDate()) {
+                            cell.classList.add("today");
+                        }
+                        date++;
+                        row.appendChild(cell);
+                    }
+                }
+
+                calendarBody.appendChild(row);
+            }
+        }
+
+        updateCalendar();
+
+        document.getElementById("prev").addEventListener("click", () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            updateCalendar();
+        });
+
+        document.getElementById("next").addEventListener("click", () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            updateCalendar();
+        });
+
+    </script>
+</body>
+</html>
